@@ -42,8 +42,8 @@ export default createStore({
            window.location.reload()
         
      },
-     async deleteProduct({commit},prodName){
-       await axios.delete(baseUrl+`/products/${prodName}`)
+     async deleteProduct({commit},prodID){
+       await axios.delete(baseUrl+`/products/${prodID}`)
          
           //  console.log(data)
           //  commit('setdeleteFriend',data)

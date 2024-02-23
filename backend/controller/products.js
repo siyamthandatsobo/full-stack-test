@@ -12,7 +12,7 @@ export default{
     res.send(await getProduct(+req.params.prodID))
 },
     deleteSingle:async(req,res)=>{
-        res.send(await deleteProduct(req.params.prodName))
+        res.send(await deleteProduct(req.params.prodID))
         
     },
     editSingle:async(req,res)=>{

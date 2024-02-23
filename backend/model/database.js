@@ -37,10 +37,10 @@ INSERT INTO products (prodName , quantity ,amount ,category ,prodUrl)
 VALUES (?,?,?,?,?)`,[prodName , quantity ,amount ,category ,prodUrl])
 return getProduct(product.insertId)
 }
-const deleteProduct = async(prodName)=>{
+const deleteProduct = async(prodID)=>{
 const [deleted]=await pool.query(`
-DELETE FROM products where prodName = ?
-`,[prodName])
+DELETE FROM products where prodID = ?
+`,[prodID])
 return getProducts(deleted) 
 }
 const editProduct = async(prodName , quantity ,amount ,category ,prodUrl,prodID)=>{

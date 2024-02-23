@@ -1,33 +1,6 @@
 <template>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="#">KASI EAT</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Admin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact-US</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <div class="viewport">
     <div class="overlay">
@@ -44,7 +17,8 @@
         <img class="img" src="https://i.ibb.co/mJXTTBg/maxresdefault.jpg">
         <img class="img" src="https://i.ibb.co/fkLH5YC/featured-4.png">
         <img class="img" src="https://i.ibb.co/tLs0PFH/Traditional-polony-kota.jpg">
-        <img class="img" src="https://i.ibb.co/DQW0RRr/images.jpg">
+        <img class="img" src="https://i.ibb.co/tLs0PFH/Traditional-polony-kota.jpg">
+        
     </div>
 </div>
 
@@ -95,15 +69,32 @@
             color: white !important;
         }
 
-        .viewport {
-            position: relative;
-            height: 500px;
-            background-image: url('https://i.pinimg.com/550x/77/15/34/77153414ce1a39b30e39f8ecf7590d5a.jpg');
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-        }
+        @keyframes change-background {
+    0%, 100% {
+      background-image: url('https://i.ibb.co/tLs0PFH/Traditional-polony-kota.jpg');
+    }
+    33.33% {
+      background-image: url('https://i.ibb.co/6DVhg7n/maxresdefault.jpg');
+    }
+    66.66% {
+      background-image: url('https://i.ibb.co/fkLH5YC/featured-4.png');
+    }
+  }
 
+  .viewport {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    animation: change-background 10s infinite  ease-in-out;
+  }
+  @media only screen and (max-width: 767px) {
+    .viewport {
+      height: 70vh;
+      width:100% /* Adjust the height for smaller screens */
+    }
+  }
         .overlay {
             position: absolute;
             top: 0;
@@ -220,8 +211,8 @@
         /* Media query for larger screens */
         @media (min-width: 768px) {
             .img {
-                width: 350px;
-            height: 350px;
+                width: 330px;
+            height: 330px;
             }
         }
         .bounce-letters {
